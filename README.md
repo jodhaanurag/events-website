@@ -8,6 +8,8 @@ Screenshots:
 ![Screenshot of adding an event](S1.jpeg)
 2. Looking at all the events (main\index route)
 ![Screenshot of all the events page](S2.jpeg)
+3. Liking an event
+![Screenshot of liking an event](S3.jpeg)
 
 *little typo: Liked Events should be My Events*
 
