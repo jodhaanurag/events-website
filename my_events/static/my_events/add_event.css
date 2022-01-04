@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+/*My custom Css*/
+
+body {
+    background-color: #bbdefb;
+}
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.addEvent {
+    padding: 50px 100px;
+    width: 800px;
+    margin:auto;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 1px 1px 41px -3px rgba(0,0,0,0.21);
+    -webkit-box-shadow: 1px 1px 41px -3px rgba(0,0,0,0.21);
+    -moz-box-shadow: 1px 1px 41px -3px rgba(0,0,0,0.21);
+    font-family: roboto, sans-serif;
+  }
+  
+  
+.addEvent > h1 {
+    font-size: 3.25rem;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+input, textarea {
+    margin: 10px;
+    margin-right: 0;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-weight: normal;
+}
+
+p {
+    font-weight: 900;
+    display: flex;
+    font-family: roboto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.input_button {
+    background-color: #000  ;
+    font-weight: 900;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 41px -3px rgba(0,0,0,0.21);
+    -webkit-box-shadow: 1px 1px 41px -3px rgba(0,0,0,0.21);
+    -moz-box-shadow: 1px 1px 41px -3px rgba(0,0,0,0.21);
+    width: 100%;
+    margin: 50px 0;
+  }
+  
+  .input_button:active {
+    box-shadow: none;
+    padding: 14px;
+  }
+
+  #index_link {
+      font-weight: normal;
+    background-color: #000  ;
+  }
+
