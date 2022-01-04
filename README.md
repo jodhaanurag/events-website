@@ -1,14 +1,15 @@
 # Event Liking and Adding Django app
 
-This repo contains my code for the assignment of 'Ignis Tech Solutions'.
+**This repo contains code for the assignment of 'Ignis Tech Solutions' by Anurag Jodha**
 
 Screenshots:
 
 1. Adding Event to the database (\add\ route)
+![Screenshot of adding an event](S1.jpeg)
 2. Looking at all the events (main\index route)
+![Screenshot of all the events page](S2.jpeg)
 
-
-**little typo: Liked Events should be My Events
+*little typo: Liked Events should be My Events*
 
 ## Details of the code written
 
