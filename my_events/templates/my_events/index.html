@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/30ca22a73c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'my_events/style.css' %}">
+    <title>Index</title>
+    </head>
+    <body>
+        <div class="container">
+            <section class="likes">
+                <h1>Liked Events</h1>
+                {% for event in events %}
+                <div class="item">
+                    <div class="item--text"> 
+                        <h2>{{ event.event_name }}</h2>
+                        <p class="item--time"><b>Date:</b> {{ event.time }}</p>
+                        <p><b>Place:</b> {{ event.location }}</p>
+                        {% if event.price == 0 %}
+                        <p><b>Price:</b> Free</p>
+                        {% else %}
+                        <p><b>Price:</b> {{ event.price }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="item--image">
+                        <img src="{{ event.image }}">
+                        {% if event.is_liked %}
+                        <a><i class="like_event fas fa-heart" name="{{ event.id }}" id="like-button"></i></a>
+                        {% else %}
+                        <a><i class="like_event far fa-heart" name="{{ event.id }}" id="like-button"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                <a href="{% url 'add' %}" class="add-event">Add an Event</a>
+            </section>
+        </div>
+        
+        <!-- Like button functionality -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            // AJAX CALL
+            $('.like_event').click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'index' %}",
+                    data: {'event_id': $(this).attr('name'),'operation':'like_event','csrfmiddlewaretoken': '{{ csrf_token }}'},
+                    dataType: "json",
+                    success: function(response) {
+                        selector = document.getElementsByName(response.event_id);
+                        is_liked = response.is_liked;
+
+                        if(is_liked) {
+                            $(selector).addClass('fas');
+                            $(selector).removeClass('far');
+                        } else {
+                            $(selector).addClass('far');
+                            $(selector).removeClass('fas')
+                        }
+
+                    }
+                });
+                
+            })
+        </script>
+    </body>
+    </html>
